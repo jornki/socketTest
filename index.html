@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<input type="text" id="f" />
+		<button id="calc">Calculate</button>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		  var socket = io.connect('http://localhost');
+		  socket.on('ready', function (data) {
+		    console.log(data);
+			socket.on('calculated', function(data) {
+				alert('Calculated value is ' + data);
+			});
+			var btn = document.getElementById('calc');
+			var inp = document.getElementById('f');
+			
+			btn.addEventListener('click', function(e) {
+				socket.emit('calculate', parseInt(inp.value));
+			});
+		  });
+		</script>
+	</body>
+</html>
