@@ -14,6 +14,12 @@ app.listen(port, function() {
 	console.log('   app listening on http://localhost:' + port);
 });
 
+// For AZURE WEB
+io.configure(function () {
+  io.set('transports', ['xhr-polling']);
+});
+//=======
+
 function handler (req, res) {
   fs.readFile(__dirname + '/index.html',
   function (err, data) {
