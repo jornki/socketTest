@@ -21,9 +21,9 @@ app.listen(port, function() {
 Azure websites doesn't support websockets
 yet, so we force Sockets.IO to use Long-polling 
 */
-/*io.configure(function () {
+io.configure(function () {
   io.set('transports', ['xhr-polling']);
-});*/
+});
 //=======
 
 /** The main application handler */
