@@ -1,3 +1,4 @@
+/** @author Jørn Kinderås */
 (function() {
 	"use strict";
 	var socket, messageList, sendBtn, messageInput;

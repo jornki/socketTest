@@ -1,4 +1,5 @@
-/** 
+/**
+@author Jørn Kinderås
 Set up the basic server (http)
 Set up Sockets (io)
 Set up the file system (fs)
