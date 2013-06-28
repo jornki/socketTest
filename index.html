@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>Chat test</title>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
 	</head>
 	<body>
-		<input type="text" id="f" />
-		<button id="calc">Calculate</button>
-		<script src="/socket.io/socket.io.js"></script>
-		<script>
-		  var socket = io.connect(document.location.origin);
-		  socket.on('ready', function (data) {
-		    console.log(data);
-			socket.on('calculated', function(data) {
-				alert('Calculated value is ' + data);
-			});
-			var btn = document.getElementById('calc');
-			var inp = document.getElementById('f');
-			
-			btn.addEventListener('click', function(e) {
-				socket.emit('calculate', parseInt(inp.value));
-			});
-		  });
-		</script>
+		<input type="text" id="messageInput" />
+		<button id="sendBtn">Send</button>
+		<ul id="messageList"></ul>
+		
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="client.js"></script>
 	</body>
 </html>
