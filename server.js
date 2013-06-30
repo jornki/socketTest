@@ -62,6 +62,23 @@ function handler(req, res) {
 			res.end(data);
 		});
 	}
+	// If the request is for a CSS file
+	// server the style.css file
+	if (req.url.indexOf('.css') != -1) {
+		fs.readFile(__dirname + '/style.css',
+
+		function(err, data) {
+			if (err) {
+				res.writeHead(500);
+				return res.end('Error loading client.js');
+			}
+
+			res.writeHead(200, {
+				'Content-Type': 'text/css'
+			});
+			res.end(data);
+		});
+	}
 }
 
 /** 

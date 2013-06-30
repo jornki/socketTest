@@ -18,20 +18,23 @@
 			// Create a new list element
 			// and push it to the chat list
 			var msg = document.createElement('li');
-			msg.innerHTML = data.message;
-			messageList.appendChild(msg);
+			msg.innerHTML = (data.time || "") + " - " + data.message;
+			messageList.insertBefore(msg, messageList.firstChild);
 		}
 	});
 
 	/** Add an event listener to the send button */
 	sendBtn.addEventListener('click', function(e) {
+		var d = new Date();
+		var time = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
 		// Send a message to the server
 		// when the user clicks the send button
 		var message = messageInput.value || "";
 		// ..if there is any content
 		if (message.length > 0) {
 			socket.emit('send', {
-				"message": messageInput.value
+				"message": messageInput.value,
+				time: time
 			});
 		}
 	});
