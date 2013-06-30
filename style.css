@@ -1,13 +1,32 @@
-textarea{
-	width: 90%;
-	
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+#inputHolder {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.7);
+	height: 45px;
+}
+input{
+	display: inline-block;
+	position: absolute;
+	left: 5px;
+	right: 90px;
+	top: 8px;
+	height: 30px;
+	padding: 0 10px;
 }
 button {
+	position: absolute;
+	right: 5px;
+	top: 8px;
 	margin: 0;
-	display: block;
+	display: inline-block;
 	-webkit-appearance: none;
-	height: 45px;
-	padding: 10px 20px;
+	height: 30px;
+	width: 80px;
+	padding: 0px 20px;
 	background: white;
 	color: white;
 	border-radius: 5px;
